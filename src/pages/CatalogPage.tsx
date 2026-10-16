@@ -3,16 +3,17 @@ import { useEffect } from "react"
 import { rootStore } from "../stores/RootStore"
 import { ProductCard } from "../components/ProductCard"
 
-export const Catalog = observer(() => {
+export const CatalogPage = observer(() => {
     const {productStore} = rootStore
 
-    const {loadProducts, products} = productStore
+    const {loadProducts, products, loading, error} = productStore
 
     useEffect(() => {
         loadProducts()
     }, [])
 
-    if (!products) return <div>Загрузка...</div>
+    if (loading) return <div>Загрузка...</div>
+    if (error) return <div>Ошибка: {error}</div>
     
     return <div>
         <div className="products-grid">

@@ -1,8 +1,8 @@
 import './App.css'
 import { Link, Route, Routes } from 'react-router'
-import { Catalog } from './pages/CatalogPage'
-import { Product } from './pages/ProductPage'
-import { Cart } from './pages/CartPage'
+import { CatalogPage } from './pages/CatalogPage'
+import { ProductPage } from './pages/ProductPage'
+import { CartPage } from './pages/CartPage'
 
 function App() {
   return (
@@ -14,9 +14,9 @@ function App() {
         </nav>
       </header>
       <Routes>
-        <Route path="/" element={<Catalog />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/" element={<CatalogPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </div>
   );
