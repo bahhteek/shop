@@ -13,20 +13,24 @@ export const ProductPage = observer(() => {
         if (!id) return
 
         loadProduct(id)
-    }, [])
+    }, [id])
 
     if (loading) return <div>Загрузка</div>
 
     if (error) return <div>Ошибка: {error}</div>
 
+    if (!product) return null
+
+    const {images, title, brand, description, price} = product
+
     return <div className="product">
         <div className="product-image">
-            <img src={product?.images[0]} alt={product?.title} />
+            <img src={images[0]} alt={title} />
         </div>
-        <div className="product-title">{product?.title}</div>
-        {product?.brand && <div className="product-brand">{product?.brand}</div>}
-        <div className="product-descr">{product?.description}</div>
-        <div className="product-price">{product?.price}</div>
-        <Link to="/catalog">В каталог</Link>
+        <div className="product-title">{title}</div>
+        {brand && <div className="product-brand">{brand}</div>}
+        <div className="product-descr">{description}</div>
+        <div className="product-price">{price}</div>
+        <Link to="/">В каталог</Link>
     </div>
 })
