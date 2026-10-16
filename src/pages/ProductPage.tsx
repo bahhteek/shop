@@ -1,6 +1,6 @@
 import { useParams } from "react-router"
 
-export const Product = () => {
+export const ProductPage = () => {
     const { id } = useParams()
     return <div>Product {id}</div>
 }

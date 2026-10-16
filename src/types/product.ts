@@ -8,7 +8,7 @@ export type Product = {
     stock: number
 }
 
-export type Products = {
+export type ProductsResponse = {
     products: Product[],
     total: number,
     skip: number,
