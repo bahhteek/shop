@@ -5,7 +5,10 @@ export type Product = {
     category: string,
     thumbnail: string,
     rating: number,
-    stock: number
+    stock: number,
+    description: string,
+    images: string[],
+    brand?: string
 }
 
 export type ProductsResponse = {
