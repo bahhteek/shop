@@ -6,8 +6,9 @@ import { Link } from "react-router"
 
 export const ProductPage = observer(() => {
     const { id } = useParams()
-    const {productStore} = rootStore
+    const {productStore, cartStore} = rootStore
     const {loadProduct, product, loading, error} = productStore
+    const {addProduct} = cartStore
 
     useEffect(() => {
         if (!id) return
@@ -31,6 +32,7 @@ export const ProductPage = observer(() => {
         {brand && <div className="product-brand">{brand}</div>}
         <div className="product-descr">{description}</div>
         <div className="product-price">{price}</div>
+        <button onClick={() => addProduct(product)}>В корзину</button>
         <Link to="/">В каталог</Link>
     </div>
 })

@@ -4,9 +4,9 @@ import { rootStore } from "../stores/RootStore"
 import { ProductCard } from "../components/ProductCard"
 
 export const CatalogPage = observer(() => {
-    const {productStore} = rootStore
+    const {catalogStore} = rootStore
 
-    const {loadProducts, products, loading, error} = productStore
+    const {loadProducts, products, loading, error} = catalogStore
 
     useEffect(() => {
         loadProducts()

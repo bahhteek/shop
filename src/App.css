@@ -281,3 +281,25 @@ q::after {
   align-items: center;
   text-align: center;
 }
+
+.cart-items{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.cart-item-img{
+  max-width: 300px;
+}
+
+.cart-item-img img{
+  width: 100%;
+}

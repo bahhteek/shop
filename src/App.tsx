@@ -3,14 +3,17 @@ import { Link, Route, Routes } from 'react-router'
 import { CatalogPage } from './pages/CatalogPage'
 import { ProductPage } from './pages/ProductPage'
 import { CartPage } from './pages/CartPage'
+import { observer } from 'mobx-react-lite'
+import { rootStore } from './stores/RootStore'
 
-function App() {
+const App = observer(() => {
+  const { cartStore } = rootStore
   return (
     <div>
       <header>
         <nav>
           <Link to="/">Catalog</Link>
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart">Cart({cartStore.totalCount})</Link>
         </nav>
       </header>
       <Routes>
@@ -20,6 +23,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+})
 
 export default App

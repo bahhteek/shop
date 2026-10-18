@@ -17,3 +17,5 @@ export type ProductsResponse = {
     skip: number,
     limit: number
 }
+
+export type CartItem = Pick<Product, "id" | "title" | "price" | "thumbnail"> & { count: number }
