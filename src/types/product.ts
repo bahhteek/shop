@@ -19,3 +19,9 @@ export type ProductsResponse = {
 }
 
 export type CartItem = Pick<Product, "id" | "title" | "price" | "thumbnail"> & { count: number }
+
+export type Category = {
+    slug: string,
+    name: string,
+    url: string
+}
